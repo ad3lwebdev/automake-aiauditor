@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary Meta -->
+  <title>Adel Auditor — AI Automation Specialist</title>
+  <meta name="description" content="Adel Auditor is an AI Automation Specialist, n8n Expert, and Workflow Architect who builds intelligent automation systems that save thousands of hours." />
+  <meta name="keywords" content="AI Automation, n8n, Zapier, AI Agents, Workflow Automation, API Integration, Business Process Automation" />
+  <meta name="author" content="Adel Auditor" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adelauditor.dev/" />
+  <meta property="og:title" content="Adel Auditor — AI Automation Specialist" />
+  <meta property="og:description" content="AI Automation Specialist, n8n Expert, and Workflow Architect who builds intelligent automation systems that save thousands of hours." />
+  <meta property="og:image" content="https://adelauditor.dev/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Adel Auditor — AI Automation Specialist" />
+  <meta name="twitter:description" content="AI Automation Specialist, n8n Expert, and Workflow Architect." />
+  <meta name="twitter:image" content="https://adelauditor.dev/og-image.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://adelauditor.dev/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" role="banner">
+    <nav class="nav-container" aria-label="Primary navigation">
+      <a href="#home" class="nav-logo" aria-label="Adel Auditor — Home">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">AA</span>
+        <span class="logo-bracket">]</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#workflow" class="nav-link">Workflow</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" aria-pressed="true">
+          <span class="toggle-icon toggle-icon--dark"><i class="fa-solid fa-moon" aria-hidden="true"></i></span>
+          <span class="toggle-icon toggle-icon--light"><i class="fa-solid fa-sun" aria-hidden="true"></i></span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="#home" class="mobile-nav-link">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#services" class="mobile-nav-link">Services</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#workflow" class="mobile-nav-link">Workflow</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <!-- Animated Background Orbs -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb--1"></div>
+        <div class="orb orb--2"></div>
+        <div class="orb orb--3"></div>
+        <div class="orb orb--4"></div>
+        <div class="grid-overlay"></div>
+        <div class="circuit-traces">
+          <svg class="circuit-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path class="circuit-path circuit-path--1" d="M0,200 H300 V400 H600 V150 H900 V350 H1200 V200 H1440" />
+            <path class="circuit-path circuit-path--2" d="M0,600 H200 V450 H500 V650 H800 V400 H1100 V600 H1440" />
+            <path class="circuit-path circuit-path--3" d="M200,0 V200 H450 V500 H700 V300 H950 V700 H1200 V500" />
+            <circle class="circuit-node" cx="300" cy="200" r="4" />
+            <circle class="circuit-node" cx="600" cy="400" r="4" />
+            <circle class="circuit-node" cx="900" cy="150" r="4" />
+            <circle class="circuit-node" cx="1200" cy="350" r="4" />
+            <circle class="circuit-node" cx="200" cy="600" r="4" />
+            <circle class="circuit-node" cx="500" cy="450" r="4" />
+            <circle class="circuit-node" cx="800" cy="650" r="4" />
+            <circle class="circuit-node" cx="450" cy="200" r="4" />
+            <circle class="circuit-node" cx="700" cy="500" r="4" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge" aria-label="Status: Available for work">
+          <span class="badge-pulse" aria-hidden="true"></span>
+          <span class="badge-text">Available for Projects</span>
+        </div>
+
+        <h1 class="hero-heading" id="hero-heading">
+          <span class="hero-name">Adel Auditor</span>
+          <span class="hero-title-wrapper">
+            <span class="hero-title-prefix">I'm a </span>
+            <span class="hero-typed-wrapper">
+              <span id="typed-text" class="typed-text" aria-live="polite" aria-label="Current role"></span>
+              <span class="typed-cursor" aria-hidden="true">|</span>
+            </span>
+          </span>
+        </h1>
+
+        <p class="hero-description">
+          I architect intelligent automation systems that eliminate repetitive work,
+          connect your tools, and let AI handle the heavy lifting — so you can focus on
+          what actually matters.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn--primary" aria-label="View my projects">
+            <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+            View My Work
+          </a>
+          <a href="#contact" class="btn btn--outline" aria-label="Get in touch">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Let's Talk
+          </a>
+        </div>
+
+        <div class="hero-tech-stack" aria-label="Technologies I work with">
+          <span class="tech-tag">n8n</span>
+          <span class="tech-tag">Zapier</span>
+          <span class="tech-tag">OpenAI</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">REST APIs</span>
+          <span class="tech-tag">Webhooks</span>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-label="Scroll down">
+        <span class="scroll-text">Scroll</span>
+        <div class="scroll-line" aria-hidden="true">
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="section-container">
+        <div class="section-label" aria-hidden="true">
+          <span class="label-line"></span>
+          <span class="label-text">About</span>
+          <span class="label-line"></span>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-content">
+            <h2 class="section-heading" id="about-heading">
+              Building the <span class="text-accent">Future</span> of<br />
+              Business Automation
+            </h2>
+            <p class="about-text">
+              I'm Adel Auditor, an AI Automation Specialist who transforms complex,
+              time-consuming business processes into sleek, intelligent workflows.
+              With deep expertise in n8n, Zapier, and AI agent architectures, I help
+              businesses reclaim thousands of hours annually.
+            </p>
+            <p class="about-text">
+              From dental clinics automating patient communications to e-commerce
+              stores running fully autonomous customer support — I design systems that
+              work while you sleep.
+            </p>
+            <div class="about-links">
+              <a href="https://github.com/ad3lwebdev" class="about-link" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                <span>GitHub</span>
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.facebook.com/ZoneAuditor/" class="about-link" target="_blank" rel="noopener noreferrer" aria-label="Visit my Facebook page">
+                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                <span>Facebook</span>
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="stats-grid" aria-label="Key statistics">
+            <article class="stat-card glass-card">
+              <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-diagram-project"></i></div>
+              <div class="stat-number">
+                <span class="stat-counter" data-target="50" aria-label="50 plus">0</span>
+                <span class="stat-plus">+</span>
+              </div>
+              <div class="stat-label">Projects Delivered</div>
+            </article>
+
+            <article class="stat-card glass-card">
+              <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></div>
+              <div class="stat-number">
+                <span class="stat-counter" data-target="30" aria-label="30 plus">0</span>
+                <span class="stat-plus">+</span>
+              </div>
+              <div class="stat-label">Happy Clients</div>
+            </article>
+
+            <article class="stat-card glass-card">
+              <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-gears"></i></div>
+              <div class="stat-number">
+                <span class="stat-counter" data-target="200" aria-label="200 plus">0</span>
+                <span class="stat-plus">+</span>
+              </div>
+              <div class="stat-label">Workflows Built</div>
+            </article>
+
+            <article class="stat-card glass-card">
+              <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
+              <div class="stat-number">
+                <span class="stat-counter" data-target="10000" aria-label="10000 plus">0</span>
+                <span class="stat-plus">+</span>
+              </div>
+              <div class="stat-label">Hours Saved</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="section-container">
+        <div class="section-label" aria-hidden="true">
+          <span class="label-line"></span>
+          <span class="label-text">Services</span>
+          <span class="label-line"></span>
+        </div>
+        <h2 class="section-heading centered" id="services-heading">
+          What I <span class="text-accent">Build</span> For You
+        </h2>
+        <p class="section-subheading centered">
+          End-to-end automation solutions tailored to your exact business needs
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card glass-card" aria-label="n8n Automation service">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <h3 class="service-title">n8n Automation</h3>
+              <p class="service-description">
+                Build self-hosted, complex multi-step workflows with n8n. From data
+                transformation pipelines to real-time event triggers — I create flows
+                that scale with your business.
+              </p>
+              <ul class="service-features" aria-label="Features">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Custom node development</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Error handling &amp; retry logic</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Self-hosted deployment</li>
+              </ul>
+              <div class="service-tag">Most Popular</div>
+            </div>
+          </article>
+
+          <article class="service-card glass-card" aria-label="Zapier Automation service">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <h3 class="service-title">Zapier Automation</h3>
+              <p class="service-description">
+                Leverage Zapier's 5,000+ app ecosystem to connect your tools instantly.
+                I design multi-step Zaps with filters, formatters, and conditional logic
+                that run flawlessly.
+              </p>
+              <ul class="service-features" aria-label="Features">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 5,000+ app integrations</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Conditional branching</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Real-time monitoring</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card glass-card service-card--featured" aria-label="AI Agents service">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <h3 class="service-title">AI Agents</h3>
+              <p class="service-description">
+                Deploy autonomous AI agents that reason, decide, and act. Powered by
+                GPT-4, Claude, and Gemini — my agents handle customer support, content
+                generation, data analysis, and more.
+              </p>
+              <ul class="service-features" aria-label="Features">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> LLM integration (GPT-4, Claude)</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Tool use &amp; function calling</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Memory &amp; context management</li>
+              </ul>
+              <div class="service-tag service-tag--featured">AI-Powered</div>
+            </div>
+          </article>
+
+          <article class="service-card glass-card" aria-label="API Integrations service">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3 class="service-title">API Integrations</h3>
+              <p class="service-description">
+                Connect any system through REST, GraphQL, or WebSocket APIs. I build
+                robust integration layers that handle authentication, rate limiting,
+                and data transformation seamlessly.
+              </p>
+              <ul class="service-features" aria-label="Features">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> REST &amp; GraphQL APIs</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> OAuth &amp; API key management</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Webhook configuration</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card glass-card" aria-label="Business Process Automation service">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-sitemap"></i>
+              </div>
+              <h3 class="service-title">Business Process Automation</h3>
+              <p class="service-description">
+                Map, analyze, and automate your entire business workflow. From lead
+                nurturing to invoice processing — I eliminate the manual work at every
+                stage of your operation.
+              </p>
+              <ul class="service-features" aria-label="Features">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Process mapping &amp; audit</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> End-to-end automation design</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> ROI measurement</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="skills" id="skills" aria-labelledby="skills-heading">
+      <div class="section-container">
+        <div class="section-label" aria-hidden="true">
+          <span class="label-line"></span>
+          <span class="label-text">Skills</span>
+          <span class="label-line"></span>
+        </div>
+        <h2 class="section-heading centered" id="skills-heading">
+          Technical <span class="text-accent">Proficiency</span>
+        </h2>
+
+        <div class="skills-wrapper">
+          <div class="skills-grid">
+            <div class="skill-item" aria-label="n8n skill: 95 percent">
+              <div class="skill-header">
+                <span class="skill-name">
+                  <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+                  n8n
+                </span>
+                <span class="skill-percent" data-percent="95">0%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="n8n proficiency 95 percent">
+                <div class="skill-fill" data-width="95"></div>
+              </div>
+            </div>
+
+            <div class="skill-item" aria-label="Zapier skill: 90 percent">
+              <div class="skill-header">
+                <span class="skill-name">
+                  <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                  Zapier
+                </span>
+                <span class="skill-percent" data-percent="90">0%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Zapier proficiency 90 percent">
+                <div class="skill-fill" data-width="90"></div>
+              </div>
+            </div>
+
+            <div class="skill-item" aria-label="AI/LLM Integration skill: 88 percent">
+              <div class="skill-header">
+                <span class="skill-name">
+                  <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                  AI / LLM Integration
+                </span>
+                <span class="skill-percent" data-percent="88">0%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="AI LLM Integration proficiency 88 percent">
+                <div class="skill-fill" data-width="88"></div>
+              </div>
+            </div>
+
+            <div class="skill-item" aria-label="API Development skill: 85 percent">
+              <div class="skill-header">
+                <span class="skill-name">
+                  <i class="fa-solid fa-code" aria-hidden="true"></i>
+                  API Development
+                </span>
+                <span class="skill-percent" data-percent="85">0%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="API Development proficiency 85 percent">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+            </div>
+
+            <div class="skill-item" aria-label="Python skill: 75 percent">
+              <div class="skill-header">
+                <span class="skill-name">
+                  <i class="fa-brands fa-python" aria-hidden="true"></i>
+                  Python
+                </span>
+                <span class="skill-percent" data-percent="75">0%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Python proficiency 75 percent">
+                <div class="skill-fill" data-width="75"></div>
+              </div>
+            </div>
+
+            <div class="skill-item" aria-label="Process Automation skill: 92 percent">
+              <div class="skill-header">
+                <span class="skill-name">
+                  <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                  Process Automation
+                </span>
+                <span class="skill-percent" data-percent="92">0%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Process Automation proficiency 92 percent">
+                <div class="skill-fill" data-width="92"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-visual" aria-hidden="true">
+            <div class="radar-placeholder">
+              <div class="radar-ring radar-ring--outer"></div>
+              <div class="radar-ring radar-ring--mid"></div>
+              <div class="radar-ring radar-ring--inner"></div>
+              <div class="radar-center"></div>
+              <div class="radar-spoke radar-spoke--1"></div>
+              <div class="radar-spoke radar-spoke--2"></div>
+              <div class="radar-spoke radar-spoke--3"></div>
+              <div class="radar-label radar-label--1">n8n</div>
+              <div class="radar-label radar-label--2">Zapier</div>
+              <div class="radar-label radar-label--3">AI/LLM</div>
+              <div class="radar-label radar-label--4">APIs</div>
+              <div class="radar-label radar-label--5">Python</div>
+              <div class="radar-label radar-label--6">BPA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="projects" id="projects" aria-labelledby="projects-heading">
+      <div class="section-container">
+        <div class="section-label" aria-hidden="true">
+          <span class="label-line"></span>
+          <span class="label-text">Projects</span>
+          <span class="label-line"></span>
+        </div>
+        <h2 class="section-heading centered" id="projects-heading">
+          Featured <span class="text-accent">Work</span>
+        </h2>
+        <p class="section-subheading centered">
+          Real automation systems delivering measurable results
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card glass-card" aria-label="Project: AI Facebook Page Agent">
+            <div class="project-card-header">
+              <div class="project-icon" aria-hidden="true">
+                <i class="fa-brands fa-facebook"></i>
+              </div>
+              <div class="project-status project-status--live">
+                <span class="status-dot" aria-hidden="true"></span>
+                Live
+              </div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">AI Facebook Page Agent</h3>
+              <p class="project-description">
+                An autonomous AI agent that monitors Facebook page messages, comments,
+                and mentions — responding intelligently, routing leads, and escalating
+                complex queries to human agents in real-time.
+              </p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span class="project-tag">n8n</span>
+                <span class="project-tag">GPT-4</span>
+                <span class="project-tag">Facebook API</span>
+                <span class="project-tag">Webhook</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/ad3lwebdev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View AI Facebook Page Agent on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                View Project
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card glass-card project-card--featured" aria-label="Project: Dental Clinic Automation">
+            <div class="project-card-header">
+              <div class="project-icon" aria-hidden="true">
+                <i class="fa-solid fa-tooth"></i>
+              </div>
+              <div class="project-status project-status--live">
+                <span class="status-dot" aria-hidden="true"></span>
+                Live
+              </div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Dental Clinic Automation</h3>
+              <p class="project-description">
+                Complete automation suite for a dental clinic: appointment scheduling,
+                patient reminders via WhatsApp/SMS, post-treatment follow-ups, and
+                monthly reporting — saving 40+ staff-hours weekly.
+              </p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span class="project-tag">Zapier</span>
+                <span class="project-tag">WhatsApp API</span>
+                <span class="project-tag">Google Calendar</span>
+                <span class="project-tag">Twilio</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/ad3lwebdev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Dental Clinic Automation on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                View Project
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card glass-card" aria-label="Project: Lead Generation Workflow">
+            <div class="project-card-header">
+              <div class="project-icon" aria-hidden="true">
+                <i class="fa-solid fa-funnel-dollar"></i>
+              </div>
+              <div class="project-status project-status--live">
+                <span class="status-dot" aria-hidden="true"></span>
+                Live
+              </div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Lead Generation Workflow</h3>
+              <p class="project-description">
+                Multi-channel lead capture and qualification pipeline. Automatically
+                scores leads using AI, enriches contact data, routes hot leads to
+                sales teams via Slack, and triggers personalized email sequences.
+              </p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span class="project-tag">n8n</span>
+                <span class="project-tag">HubSpot</span>
+                <span class="project-tag">OpenAI</span>
+                <span class="project-tag">Slack</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/ad3lwebdev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Lead Generation Workflow on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                View Project
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card glass-card" aria-label="Project: Customer Support AI Agent">
+            <div class="project-card-header">
+              <div class="project-icon" aria-hidden="true">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <div class="project-status project-status--live">
+                <span class="status-dot" aria-hidden="true"></span>
+                Live
+              </div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Customer Support AI Agent</h3>
+              <p class="project-description">
+                24/7 AI-powered support agent that handles tier-1 tickets autonomously,
+                retrieves order information from APIs, processes refund requests, and
+                seamlessly hands off complex cases with full context.
+              </p>
+              <div class="project-tags" aria-label="Technologies used">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Claude AI</span>
+                <span class="project-tag">Zendesk</span>
+                <span class="project-tag">REST API</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/ad3lwebdev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Customer Support AI Agent on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                View Project
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="projects-cta">
+          <a href="https://github.com/ad3lwebdev" class="btn btn--outline" target="_blank" rel="noopener noreferrer" aria-label="See all projects on GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            See All on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WORKFLOW VISUALIZATION ========== -->
+    <section class="workflow" id="workflow" aria-labelledby="workflow-heading">
+      <div class="section-container">
+        <div class="section-label" aria-hidden="true">
+          <span class="label-line"></span>
+          <span class="label-text">Workflow</span>
+          <span class="label-line"></span>
+        </div>
+        <h2 class="section-heading centered" id="workflow-heading">
+          How <span class="text-accent">Automation</span> Works
+        </h2>
+        <p class="section-subheading centered">
+          A typical intelligent automation pipeline — from trigger to outcome
+        </p>
+
+        <div class="workflow-diagram" role="img" aria-label="Automation workflow diagram showing 5 steps: Trigger, Process, AI Decision, Action, and Notification">
+          <div class="flow-step" data-step="1">
+            <div class="flow-node glass-card">
+              <div class="flow-node-icon" aria-hidden="true">
+                <i class="fa-solid fa-play-circle"></i>
+              </div>
+              <div class="flow-node-content">
+                <span class="flow-node-num">01</span>
+                <h3 class="flow-node-title">Trigger</h3>
+                <p class="flow-node-desc">New form submission, webhook event, scheduled time, or API call initiates the flow</p>
+              </div>
+              <div class="flow-node-tags">
+                <span>Webhook</span>
+                <span>Schedule</span>
+                <span>Form</span>
+              </div>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">
+              <div class="flow-arrow-line"></div>
+              <div class="flow-arrow-pulse"></div>
+              <i class="fa-solid fa-chevron-right flow-arrow-head"></i>
+            </div>
+          </div>
+
+          <div class="flow-step" data-step="2">
+            <div class="flow-node glass-card">
+              <div class="flow-node-icon" aria-hidden="true">
+                <i class="fa-solid fa-filter"></i>
+              </div>
+              <div class="flow-node-content">
+                <span class="flow-node-num">02</span>
+                <h3 class="flow-node-title">Process</h3>
+                <p class="flow-node-desc">Data is extracted, transformed, validated, and enriched from connected sources</p>
+              </div>
+              <div class="flow-node-tags">
+                <span>Transform</span>
+                <span>Validate</span>
+                <span>Enrich</span>
+              </div>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">
+              <div class="flow-arrow-line"></div>
+              <div class="flow-arrow-pulse"></div>
+              <i class="fa-solid fa-chevron-right flow-arrow-head"></i>
+            </div>
+          </div>
+
+          <div class="flow-step flow-step--featured" data-step="3">
+            <div class="flow-node glass-card flow-node--ai">
+              <div class="flow-node-icon" aria-hidden="true">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div class="flow-node-content">
+                <span class="flow-node-num">03</span>
+                <h3 class="flow-node-title">AI Decision</h3>
+                <p class="flow-node-desc">LLM analyzes context, classifies intent, and determines the optimal response path</p>
+              </div>
+              <div class="flow-node-tags">
+                <span>GPT-4</span>
+                <span>Claude</span>
+                <span>Classify</span>
+              </div>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">
+              <div class="flow-arrow-line"></div>
+              <div class="flow-arrow-pulse"></div>
+              <i class="fa-solid fa-chevron-right flow-arrow-head"></i>
+            </div>
+          </div>
+
+          <div class="flow-step" data-step="4">
+            <div class="flow-node glass-card">
+              <div class="flow-node-icon" aria-hidden="true">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="flow-node-content">
+                <span class="flow-node-num">04</span>
+                <h3 class="flow-node-title">Action</h3>
+                <p class="flow-node-desc">Execute tasks: update CRM, send email, create record, call API, or trigger sub-workflow</p>
+              </div>
+              <div class="flow-node-tags">
+                <span>CRM</span>
+                <span>Email</span>
+                <span>API Call</span>
+              </div>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">
+              <div class="flow-arrow-line"></div>
+              <div class="flow-arrow-pulse"></div>
+              <i class="fa-solid fa-chevron-right flow-arrow-head"></i>
+            </div>
+          </div>
+
+          <div class="flow-step" data-step="5">
+            <div class="flow-node glass-card">
+              <div class="flow-node-icon" aria-hidden="true">
+                <i class="fa-solid fa-bell"></i>
+              </div>
+              <div class="flow-node-content">
+                <span class="flow-node-num">05</span>
+                <h3 class="flow-node-title">Notification</h3>
+                <p class="flow-node-desc">Team is alerted via Slack, email, or SMS with full context and outcome summary</p>
+              </div>
+              <div class="flow-node-tags">
+                <span>Slack</span>
+                <span>Email</span>
+                <span>SMS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="workflow-footer-note">
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          <span>Each workflow includes error handling, retry logic, and monitoring dashboards</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="section-container">
+        <div class="section-label" aria-hidden="true">
+          <span class="label-line"></span>
+          <span class="label-text">Contact</span>
+          <span class="label-line"></span>
+        </div>
+        <h2 class="section-heading centered" id="contact-heading">
+          Start Your <span class="text-accent">Automation</span> Journey
+        </h2>
+        <p class="section-subheading centered">
+          Tell me about your processes and I'll show you how to automate them
+        </p>
+
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="contact-info-item glass-card">
+              <div class="contact-info-icon" aria-hidden="true">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-info-content">
+                <span class="contact-info-label">Email</span>
+                <a href="mailto:adelauditor05@gmail.com" class="contact-info-value" aria-label="Send email to Adel Auditor">adelauditor05@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item glass-card">
+              <div class="contact-info-icon" aria-hidden="true">
+                <i class="fa-brands fa-facebook"></i>
+              </div>
+              <div class="contact-info-content">
+                <span class="contact-info-label">Facebook</span>
+                <a href="https://www.facebook.com/ZoneAuditor/" class="contact-info-value" target="_blank" rel="noopener noreferrer" aria-label="Visit Adel Auditor on Facebook">ZoneAuditor</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item glass-card">
+              <div class="contact-info-icon" aria-hidden="true">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="contact-info-content">
+                <span class="contact-info-label">GitHub</span>
+                <a href="https://github.com/ad3lwebdev" class="contact-info-value" target="_blank" rel="noopener noreferrer" aria-label="Visit Adel Auditor on GitHub">ad3lwebdev</a>
+              </div>
+            </div>
+
+            <div class="contact-availability glass-card">
+              <div class="availability-indicator" aria-hidden="true">
+                <span class="availability-dot"></span>
+              </div>
+              <div class="availability-text">
+                <strong>Currently available</strong> for new automation projects
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form glass-card" id="contact-form" novalidate aria-label="Contact form">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Your Name</label>
+              <div class="form-input-wrap">
+                <i class="fa-solid fa-user form-input-icon" aria-hidden="true"></i>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Enter your full name"
+                  required
+                  autocomplete="name"
+                  aria-required="true"
+                  aria-describedby="name-error"
+                />
+              </div>
+              <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email Address</label>
+              <div class="form-input-wrap">
+                <i class="fa-solid fa-envelope form-input-icon" aria-hidden="true"></i>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  class="form-input"
+                  placeholder="your@email.com"
+                  required
+                  autocomplete="email"
+                  aria-required="true"
+                  aria-describedby="email-error"
+                />
+              </div>
+              <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Subject</label>
+              <div class="form-input-wrap">
+                <i class="fa-solid fa-tag form-input-icon" aria-hidden="true"></i>
+                <input
+                  type="text"
+                  id="contact-subject"
+                  name="subject"
+                  class="form-input"
+                  placeholder="What do you need automated?"
+                  required
+                  aria-required="true"
+                  aria-describedby="subject-error"
+                />
+              </div>
+              <span class="form-error" id="subject-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message</label>
+              <div class="form-input-wrap form-input-wrap--textarea">
+                <i class="fa-solid fa-message form-input-icon form-input-icon--textarea" aria-hidden="true"></i>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  class="form-input form-textarea"
+                  placeholder="Describe your automation needs, current tools, and goals..."
+                  rows="5"
+                  required
+                  aria-required="true"
+                  aria-describedby="message-error"
+                ></textarea>
+              </div>
+              <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" aria-label="Send message to Adel Auditor">
+              <span class="btn-text">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                Send Message
+              </span>
+              <span class="btn-loading" aria-hidden="true">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+                Sending...
+              </span>
+            </button>
+
+            <div class="form-success" id="form-success" role="status" aria-live="polite" aria-hidden="true">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Message sent! I'll get back to you within 24 hours.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo" aria-label="Adel Auditor — Back to top">
+            <span class="logo-bracket">[</span>
+            <span class="logo-text">AA</span>
+            <span class="logo-bracket">]</span>
+          </a>
+          <p class="footer-tagline">
+            Building intelligent automation systems that work while you sleep.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h3 class="footer-nav-title">Navigation</h3>
+          <ul class="footer-nav-links" role="list">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#projects" class="footer-link">Projects</a></li>
+            <li><a href="#workflow" class="footer-link">Workflow</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-social">
+          <h3 class="footer-nav-title">Connect</h3>
+          <div class="social-links" aria-label="Social media links">
+            <a href="mailto:adelauditor05@gmail.com" class="social-link" aria-label="Email Adel Auditor">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/ZoneAuditor/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Visit Adel Auditor on Facebook">
+              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/ad3lwebdev" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Visit Adel Auditor on GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> Adel Auditor. All rights reserved.
+        </p>
+        <p class="footer-stack">
+          Built with <i class="fa-solid fa-heart" aria-hidden="true"></i> using n8n, AI &amp; pure craft
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
