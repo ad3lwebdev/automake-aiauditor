@@ -706,7 +706,7 @@ input, textarea, button { font-family: inherit; }
     height: 50px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid white;
+     border:2px solid var(--glass-border-hover);
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 
     width:50px;height:50px;border-radius:50%;background:#22c55e;
