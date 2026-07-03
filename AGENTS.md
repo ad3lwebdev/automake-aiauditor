@@ -11,9 +11,46 @@ A zero-dependency, pure HTML/CSS/JS portfolio website for Adel Auditor (AI Autom
 ├── index.html   — All markup, sections, and CDN links
 ├── style.css    — All styling (custom properties, animations, responsive)
 ├── script.js    — All interactivity (no libraries)
+├── data.json    — Editable content: skills[] and projects[] (see below)
 ├── README.md
 └── AGENTS.md
 ```
+
+## Updating Content (data.json)
+
+Skills and projects are **not** hard-coded in `index.html`. They live in
+`data.json` and are fetched + rendered into `#skills-grid` and
+`#projects-grid` by section 0 of `script.js` (`loadPortfolioData`).
+
+To add/edit/remove a skill, edit the `skills` array:
+```json
+{ "name": "n8n", "icon": "fa-solid fa-network-wired", "percent": 95 }
+```
+- `icon` is any Font Awesome 6 class string (already loaded via CDN).
+- The first 6 skills also populate the decorative radar chart labels.
+
+To add/edit/remove a project, edit the `projects` array:
+```json
+{
+  "title": "Project Name",
+  "icon": "fa-solid fa-robot",
+  "status": "live",
+  "featured": false,
+  "description": "One or two sentences.",
+  "tags": ["n8n", "OpenAI"],
+  "link": "https://github.com/ad3lwebdev/repo-name"
+}
+```
+- `featured` (boolean) applies the `.project-card--featured` highlight style.
+- `status` becomes both the CSS class (`project-status--{status}`) and the
+  displayed label (auto-capitalized) — use values that make sense with the
+  existing status-dot styling (e.g. `live`, `beta`, `archived`).
+
+**Important:** because content is fetched via `fetch('data.json')`, opening
+`index.html` directly as a `file://` URL will fail silently (browsers block
+local `fetch` by default) — the sections will show a "failed to load"
+message. Use a local server (`python3 -m http.server 8080`) or view it live
+via GitHub Pages, where `fetch` works normally over HTTP.
 
 ## HTML Sections (index.html)
 
@@ -49,7 +86,8 @@ All code runs inside a single `DOMContentLoaded` listener. No global state excep
 | Sticky navbar        | Add `.scrolled` to `.navbar` when `scrollY > 48` |
 | Typing effect        | Character-by-character `setTimeout` loop, targets `#typed-text` |
 | Stat counters        | `IntersectionObserver` on `[data-target]`, `requestAnimationFrame` count-up |
-| Skill bars           | `IntersectionObserver` on `.skill-fill[data-width]`, sets `style.width` |
+| Dynamic content      | `fetch('data.json')` on load → renders `#skills-grid` and `#projects-grid`, then calls `initSkillBars()` |
+| Skill bars           | `IntersectionObserver` on `.skill-fill[data-width]`, sets `style.width` (invoked by `initSkillBars()` after render) |
 | Scroll reveal        | `IntersectionObserver` adds `.visible` to `.reveal` elements |
 | Active nav           | Scroll listener reads `section.offsetTop`, sets `.active` on `.nav-link` |
 | Contact form         | `#contact-form` — client-side validation, simulated async submit |

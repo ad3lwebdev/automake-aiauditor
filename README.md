@@ -18,6 +18,13 @@ A premium, production-ready personal portfolio website for Adel Auditor, an AI A
 - **Fully responsive** — mobile-first, breakpoints at 768px and 1024px
 - **SEO optimised** — Open Graph, Twitter Card, canonical, meta descriptions
 
+## Updating Your Skills & Projects
+
+You no longer need to edit HTML to add a project or skill. Just edit
+**`data.json`** — the page renders it automatically. See `AGENTS.md` for the
+exact field format. After saving, refresh the page (via a local server or
+GitHub Pages) to see your changes.
+
 ## Tech Stack
 
 - HTML5 (semantic, accessible, ARIA labels)
@@ -28,16 +35,17 @@ A premium, production-ready personal portfolio website for Adel Auditor, an AI A
 
 ## Running Locally
 
-No build step required — open `index.html` directly in a browser:
+No build step required, but since skills and projects are now loaded from
+`data.json` via `fetch()`, you need to serve the folder over HTTP (opening
+`index.html` directly as a `file://` URL will fail to load that content):
 
 ```bash
-# Option 1 — file:// (simplest)
-open index.html
-
-# Option 2 — any static server
+# any static server works
 npx serve .
 python3 -m http.server 8080
 ```
+
+Then visit `http://localhost:8080` (or the port shown).
 
 ## GitHub Pages Deployment
 

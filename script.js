@@ -4,6 +4,150 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ─── 0. DYNAMIC CONTENT (skills + projects loaded from data.json) ────────
+  //
+  // To add / edit / remove a skill or project, you only need to edit
+  // data.json — this section reads it and builds the markup automatically.
+
+  const escapeHTML = (str) =>
+    String(str).replace(/[&<>"']/g, (c) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[c]));
+
+  const renderSkillItem = (skill) => `
+    <div class="skill-item" aria-label="${escapeHTML(skill.name)} skill: ${skill.percent} percent">
+      <div class="skill-header">
+        <span class="skill-name">
+          <i class="${escapeHTML(skill.icon)}" aria-hidden="true"></i>
+          ${escapeHTML(skill.name)}
+        </span>
+        <span class="skill-percent" data-percent="${skill.percent}">0%</span>
+      </div>
+      <div class="skill-bar" role="progressbar" aria-valuenow="${skill.percent}" aria-valuemin="0" aria-valuemax="100" aria-label="${escapeHTML(skill.name)} proficiency ${skill.percent} percent">
+        <div class="skill-fill" data-width="${skill.percent}"></div>
+      </div>
+    </div>`;
+
+  const renderProjectCard = (project) => {
+    const featuredClass = project.featured ? ' project-card--featured' : '';
+    const statusLabel = project.status
+      ? project.status.charAt(0).toUpperCase() + project.status.slice(1)
+      : 'Live';
+    const tags = (project.tags || [])
+      .map((tag) => `<span class="project-tag">${escapeHTML(tag)}</span>`)
+      .join('');
+
+    return `
+      <article class="project-card glass-card${featuredClass}" aria-label="Project: ${escapeHTML(project.title)}">
+        <div class="project-card-header">
+          <div class="project-icon" aria-hidden="true">
+            <i class="${escapeHTML(project.icon)}"></i>
+          </div>
+          <div class="project-status project-status--${escapeHTML(project.status || 'live')}">
+            <span class="status-dot" aria-hidden="true"></span>
+            ${escapeHTML(statusLabel)}
+          </div>
+        </div>
+        <div class="project-card-body">
+          <h3 class="project-title">${escapeHTML(project.title)}</h3>
+          <p class="project-description">${escapeHTML(project.description)}</p>
+          <div class="project-tags" aria-label="Technologies used">
+            ${tags}
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <a href="${escapeHTML(project.link)}" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View ${escapeHTML(project.title)} on GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            View Project
+          </a>
+        </div>
+      </article>`;
+  };
+
+  // Sets up the IntersectionObserver-driven fill/count-up animation on
+  // .skill-fill elements. Extracted into a function so it can run again
+  // after skills are injected dynamically (see loadPortfolioData below).
+  const initSkillBars = () => {
+    const skillFills = document.querySelectorAll('.skill-fill[data-width]:not([data-observed])');
+
+    if (!skillFills.length) return;
+
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          const pct = bar.getAttribute('data-width') + '%';
+          bar.style.width = pct;
+
+          const item  = bar.closest('.skill-item');
+          const label = item?.querySelector('.skill-percent');
+          if (label) {
+            const target   = parseInt(label.getAttribute('data-percent'), 10);
+            const duration = 1400;
+            const start    = performance.now();
+            const easeOut  = t => 1 - Math.pow(1 - t, 3);
+            const step = (now) => {
+              const progress = Math.min((now - start) / duration, 1);
+              label.textContent = Math.floor(easeOut(progress) * target) + '%';
+              if (progress < 1) requestAnimationFrame(step);
+              else label.textContent = target + '%';
+            };
+            requestAnimationFrame(step);
+          }
+
+          skillObserver.unobserve(bar);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    skillFills.forEach(bar => {
+      bar.setAttribute('data-observed', 'true');
+      skillObserver.observe(bar);
+    });
+  };
+
+  const loadPortfolioData = async () => {
+    const skillsGrid   = document.getElementById('skills-grid');
+    const projectsGrid = document.getElementById('projects-grid');
+
+    try {
+      const res = await fetch('data.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error(`Failed to load data.json (${res.status})`);
+      const data = await res.json();
+
+      // Skills
+      if (skillsGrid && Array.isArray(data.skills)) {
+        skillsGrid.innerHTML = data.skills.map(renderSkillItem).join('');
+        skillsGrid.removeAttribute('data-loading');
+
+        // Sync the decorative radar chart labels with the first 6 skills
+        data.skills.slice(0, 6).forEach((skill, i) => {
+          const label = document.querySelector(`[data-radar-label="${i + 1}"]`);
+          if (label) label.textContent = skill.name;
+        });
+
+        initSkillBars();
+      }
+
+      // Projects
+      if (projectsGrid && Array.isArray(data.projects)) {
+        projectsGrid.innerHTML = data.projects.map(renderProjectCard).join('');
+        projectsGrid.removeAttribute('data-loading');
+      }
+    } catch (err) {
+      console.error('Portfolio data failed to load:', err);
+      if (skillsGrid) {
+        skillsGrid.innerHTML = '<p class="data-load-error">Skills failed to load. Please refresh.</p>';
+      }
+      if (projectsGrid) {
+        projectsGrid.innerHTML = '<p class="data-load-error">Projects failed to load. Please refresh.</p>';
+      }
+    }
+  };
+
+  loadPortfolioData();
+
+
   // ─── 1. THEME TOGGLE ─────────────────────────────────────────────────────
 
   const html = document.documentElement;
@@ -157,45 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
 
     counterEls.forEach(el => counterObserver.observe(el));
-  }
-
-
-  // ─── 6. SKILLS PROGRESS BARS ─────────────────────────────────────────────
-
-  const skillFills  = document.querySelectorAll('.skill-fill[data-width]');
-  const skillPcts   = document.querySelectorAll('.skill-percent[data-percent]');
-
-  if (skillFills.length) {
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const bar = entry.target;
-          const pct = bar.getAttribute('data-width') + '%';
-          bar.style.width = pct;
-
-          // Also animate the percentage label
-          const item   = bar.closest('.skill-item');
-          const label  = item?.querySelector('.skill-percent');
-          if (label) {
-            const target   = parseInt(label.getAttribute('data-percent'), 10);
-            const duration = 1400;
-            const start    = performance.now();
-            const easeOut  = t => 1 - Math.pow(1 - t, 3);
-            const step = (now) => {
-              const progress = Math.min((now - start) / duration, 1);
-              label.textContent = Math.floor(easeOut(progress) * target) + '%';
-              if (progress < 1) requestAnimationFrame(step);
-              else label.textContent = target + '%';
-            };
-            requestAnimationFrame(step);
-          }
-
-          skillObserver.unobserve(bar);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    skillFills.forEach(bar => skillObserver.observe(bar));
   }
 
 

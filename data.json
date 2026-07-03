@@ -1,0 +1,49 @@
+{
+  "skills": [
+    { "name": "n8n", "icon": "fa-solid fa-network-wired", "percent": 95 },
+    { "name": "Zapier", "icon": "fa-solid fa-bolt", "percent": 90 },
+    { "name": "AI / LLM Integration", "icon": "fa-solid fa-brain", "percent": 88 },
+    { "name": "API Development", "icon": "fa-solid fa-code", "percent": 85 },
+    { "name": "Python", "icon": "fa-brands fa-python", "percent": 75 },
+    { "name": "Process Automation", "icon": "fa-solid fa-gears", "percent": 92 }
+  ],
+
+  "projects": [
+    {
+      "title": "AI Facebook Page Agent",
+      "icon": "fa-brands fa-facebook",
+      "status": "live",
+      "featured": false,
+      "description": "An autonomous AI agent that monitors Facebook page messages, comments, and mentions — responding intelligently, routing leads, and escalating complex queries to human agents in real-time.",
+      "tags": ["n8n", "GPT-4", "Facebook API", "Webhook"],
+      "link": "https://github.com/ad3lwebdev"
+    },
+    {
+      "title": "Dental Clinic Automation",
+      "icon": "fa-solid fa-tooth",
+      "status": "live",
+      "featured": true,
+      "description": "Complete automation suite for a dental clinic: appointment scheduling, patient reminders via WhatsApp/SMS, post-treatment follow-ups, and monthly reporting — saving 40+ staff-hours weekly.",
+      "tags": ["Zapier", "WhatsApp API", "Google Calendar", "Twilio"],
+      "link": "https://github.com/ad3lwebdev"
+    },
+    {
+      "title": "Lead Generation Workflow",
+      "icon": "fa-solid fa-funnel-dollar",
+      "status": "live",
+      "featured": false,
+      "description": "Multi-channel lead capture and qualification pipeline. Automatically scores leads using AI, enriches contact data, routes hot leads to sales teams via Slack, and triggers personalized email sequences.",
+      "tags": ["n8n", "HubSpot", "OpenAI", "Slack"],
+      "link": "https://github.com/ad3lwebdev"
+    },
+    {
+      "title": "Customer Support AI Agent",
+      "icon": "fa-solid fa-headset",
+      "status": "live",
+      "featured": false,
+      "description": "24/7 AI-powered support agent that handles tier-1 tickets autonomously, retrieves order information from APIs, processes refund requests, and seamlessly hands off complex cases with full context.",
+      "tags": ["Python", "Claude AI", "Zendesk", "REST API"],
+      "link": "https://github.com/ad3lwebdev"
+    }
+  ]
+}

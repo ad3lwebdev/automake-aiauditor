@@ -376,84 +376,8 @@
         </h2>
 
         <div class="skills-wrapper">
-          <div class="skills-grid">
-            <div class="skill-item" aria-label="n8n skill: 95 percent">
-              <div class="skill-header">
-                <span class="skill-name">
-                  <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
-                  n8n
-                </span>
-                <span class="skill-percent" data-percent="95">0%</span>
-              </div>
-              <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="n8n proficiency 95 percent">
-                <div class="skill-fill" data-width="95"></div>
-              </div>
-            </div>
-
-            <div class="skill-item" aria-label="Zapier skill: 90 percent">
-              <div class="skill-header">
-                <span class="skill-name">
-                  <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-                  Zapier
-                </span>
-                <span class="skill-percent" data-percent="90">0%</span>
-              </div>
-              <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Zapier proficiency 90 percent">
-                <div class="skill-fill" data-width="90"></div>
-              </div>
-            </div>
-
-            <div class="skill-item" aria-label="AI/LLM Integration skill: 88 percent">
-              <div class="skill-header">
-                <span class="skill-name">
-                  <i class="fa-solid fa-brain" aria-hidden="true"></i>
-                  AI / LLM Integration
-                </span>
-                <span class="skill-percent" data-percent="88">0%</span>
-              </div>
-              <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="AI LLM Integration proficiency 88 percent">
-                <div class="skill-fill" data-width="88"></div>
-              </div>
-            </div>
-
-            <div class="skill-item" aria-label="API Development skill: 85 percent">
-              <div class="skill-header">
-                <span class="skill-name">
-                  <i class="fa-solid fa-code" aria-hidden="true"></i>
-                  API Development
-                </span>
-                <span class="skill-percent" data-percent="85">0%</span>
-              </div>
-              <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="API Development proficiency 85 percent">
-                <div class="skill-fill" data-width="85"></div>
-              </div>
-            </div>
-
-            <div class="skill-item" aria-label="Python skill: 75 percent">
-              <div class="skill-header">
-                <span class="skill-name">
-                  <i class="fa-brands fa-python" aria-hidden="true"></i>
-                  Python
-                </span>
-                <span class="skill-percent" data-percent="75">0%</span>
-              </div>
-              <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Python proficiency 75 percent">
-                <div class="skill-fill" data-width="75"></div>
-              </div>
-            </div>
-
-            <div class="skill-item" aria-label="Process Automation skill: 92 percent">
-              <div class="skill-header">
-                <span class="skill-name">
-                  <i class="fa-solid fa-gears" aria-hidden="true"></i>
-                  Process Automation
-                </span>
-                <span class="skill-percent" data-percent="92">0%</span>
-              </div>
-              <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Process Automation proficiency 92 percent">
-                <div class="skill-fill" data-width="92"></div>
-              </div>
-            </div>
+          <div class="skills-grid" id="skills-grid" data-loading="true" aria-live="polite">
+            <!-- Skill items are injected here by script.js from data.json -->
           </div>
 
           <div class="skills-visual" aria-hidden="true">
@@ -465,12 +389,12 @@
               <div class="radar-spoke radar-spoke--1"></div>
               <div class="radar-spoke radar-spoke--2"></div>
               <div class="radar-spoke radar-spoke--3"></div>
-              <div class="radar-label radar-label--1">n8n</div>
-              <div class="radar-label radar-label--2">Zapier</div>
-              <div class="radar-label radar-label--3">AI/LLM</div>
-              <div class="radar-label radar-label--4">APIs</div>
-              <div class="radar-label radar-label--5">Python</div>
-              <div class="radar-label radar-label--6">BPA</div>
+              <div class="radar-label radar-label--1" data-radar-label="1"></div>
+              <div class="radar-label radar-label--2" data-radar-label="2"></div>
+              <div class="radar-label radar-label--3" data-radar-label="3"></div>
+              <div class="radar-label radar-label--4" data-radar-label="4"></div>
+              <div class="radar-label radar-label--5" data-radar-label="5"></div>
+              <div class="radar-label radar-label--6" data-radar-label="6"></div>
             </div>
           </div>
         </div>
@@ -492,134 +416,8 @@
           Real automation systems delivering measurable results
         </p>
 
-        <div class="projects-grid">
-          <article class="project-card glass-card" aria-label="Project: AI Facebook Page Agent">
-            <div class="project-card-header">
-              <div class="project-icon" aria-hidden="true">
-                <i class="fa-brands fa-facebook"></i>
-              </div>
-              <div class="project-status project-status--live">
-                <span class="status-dot" aria-hidden="true"></span>
-                Live
-              </div>
-            </div>
-            <div class="project-card-body">
-              <h3 class="project-title">AI Facebook Page Agent</h3>
-              <p class="project-description">
-                An autonomous AI agent that monitors Facebook page messages, comments,
-                and mentions — responding intelligently, routing leads, and escalating
-                complex queries to human agents in real-time.
-              </p>
-              <div class="project-tags" aria-label="Technologies used">
-                <span class="project-tag">n8n</span>
-                <span class="project-tag">GPT-4</span>
-                <span class="project-tag">Facebook API</span>
-                <span class="project-tag">Webhook</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <a href="https://github.com/ad3lwebdev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View AI Facebook Page Agent on GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-                View Project
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card glass-card project-card--featured" aria-label="Project: Dental Clinic Automation">
-            <div class="project-card-header">
-              <div class="project-icon" aria-hidden="true">
-                <i class="fa-solid fa-tooth"></i>
-              </div>
-              <div class="project-status project-status--live">
-                <span class="status-dot" aria-hidden="true"></span>
-                Live
-              </div>
-            </div>
-            <div class="project-card-body">
-              <h3 class="project-title">Dental Clinic Automation</h3>
-              <p class="project-description">
-                Complete automation suite for a dental clinic: appointment scheduling,
-                patient reminders via WhatsApp/SMS, post-treatment follow-ups, and
-                monthly reporting — saving 40+ staff-hours weekly.
-              </p>
-              <div class="project-tags" aria-label="Technologies used">
-                <span class="project-tag">Zapier</span>
-                <span class="project-tag">WhatsApp API</span>
-                <span class="project-tag">Google Calendar</span>
-                <span class="project-tag">Twilio</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <a href="https://github.com/ad3lwebdev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Dental Clinic Automation on GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-                View Project
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card glass-card" aria-label="Project: Lead Generation Workflow">
-            <div class="project-card-header">
-              <div class="project-icon" aria-hidden="true">
-                <i class="fa-solid fa-funnel-dollar"></i>
-              </div>
-              <div class="project-status project-status--live">
-                <span class="status-dot" aria-hidden="true"></span>
-                Live
-              </div>
-            </div>
-            <div class="project-card-body">
-              <h3 class="project-title">Lead Generation Workflow</h3>
-              <p class="project-description">
-                Multi-channel lead capture and qualification pipeline. Automatically
-                scores leads using AI, enriches contact data, routes hot leads to
-                sales teams via Slack, and triggers personalized email sequences.
-              </p>
-              <div class="project-tags" aria-label="Technologies used">
-                <span class="project-tag">n8n</span>
-                <span class="project-tag">HubSpot</span>
-                <span class="project-tag">OpenAI</span>
-                <span class="project-tag">Slack</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <a href="https://github.com/ad3lwebdev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Lead Generation Workflow on GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-                View Project
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card glass-card" aria-label="Project: Customer Support AI Agent">
-            <div class="project-card-header">
-              <div class="project-icon" aria-hidden="true">
-                <i class="fa-solid fa-headset"></i>
-              </div>
-              <div class="project-status project-status--live">
-                <span class="status-dot" aria-hidden="true"></span>
-                Live
-              </div>
-            </div>
-            <div class="project-card-body">
-              <h3 class="project-title">Customer Support AI Agent</h3>
-              <p class="project-description">
-                24/7 AI-powered support agent that handles tier-1 tickets autonomously,
-                retrieves order information from APIs, processes refund requests, and
-                seamlessly hands off complex cases with full context.
-              </p>
-              <div class="project-tags" aria-label="Technologies used">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Claude AI</span>
-                <span class="project-tag">Zendesk</span>
-                <span class="project-tag">REST API</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <a href="https://github.com/ad3lwebdev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Customer Support AI Agent on GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-                View Project
-              </a>
-            </div>
-          </article>
+        <div class="projects-grid" id="projects-grid" data-loading="true" aria-live="polite">
+          <!-- Project cards are injected here by script.js from data.json -->
         </div>
 
         <div class="projects-cta">
