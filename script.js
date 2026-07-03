@@ -382,11 +382,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ─── 10. CONTACT FORM ────────────────────────────────────────────────────
+  //
+  // Sends real emails via Web3Forms (https://web3forms.com) — a free,
+  // backend-free form relay. Get your access key at web3forms.com and paste
+  // it into the hidden "access_key" input in index.html.
 
   const contactForm = document.getElementById('contact-form');
 
   if (contactForm) {
     const successEl = document.getElementById('form-success');
+    const errorEl   = document.getElementById('form-submit-error');
     const submitBtn = contactForm.querySelector('[type="submit"]');
 
     const showError = (inputId, msg) => {
@@ -403,9 +408,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const validateEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
-    contactForm.addEventListener('submit', (e) => {
+    const showBanner = (el, hideAfterMs = 5000) => {
+      if (!el) return;
+      el.setAttribute('aria-hidden', 'false');
+      el.style.display = 'flex';
+      setTimeout(() => {
+        el.setAttribute('aria-hidden', 'true');
+        el.style.display = 'none';
+      }, hideAfterMs);
+    };
+
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       clearErrors();
+      if (errorEl) { errorEl.setAttribute('aria-hidden', 'true'); errorEl.style.display = 'none'; }
+
+      // Honeypot: if this hidden field got filled, silently drop (bot).
+      const honeypot = contactForm.querySelector('[name="botcheck"]');
+      if (honeypot?.checked) return;
 
       const name    = document.getElementById('contact-name');
       const email   = document.getElementById('contact-email');
@@ -420,24 +440,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!valid) return;
 
+      const accessKey = contactForm.querySelector('[name="access_key"]')?.value;
+      if (!accessKey || accessKey === 'YOUR-WEB3FORMS-ACCESS-KEY-HERE') {
+        console.error('Web3Forms access_key is not set — see index.html contact form.');
+        showBanner(errorEl);
+        return;
+      }
+
       // Loading state
       submitBtn?.classList.add('loading');
       if (submitBtn) submitBtn.disabled = true;
 
-      // Simulate send (replace with real fetch to a form handler / Netlify Forms)
-      setTimeout(() => {
+      try {
+        const payload = Object.fromEntries(new FormData(contactForm).entries());
+
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          contactForm.reset();
+          showBanner(successEl);
+        } else {
+          console.error('Web3Forms error:', result.message);
+          showBanner(errorEl);
+        }
+      } catch (err) {
+        console.error('Contact form send failed:', err);
+        showBanner(errorEl);
+      } finally {
         submitBtn?.classList.remove('loading');
         if (submitBtn) submitBtn.disabled = false;
-        contactForm.reset();
-        if (successEl) {
-          successEl.setAttribute('aria-hidden', 'false');
-          successEl.style.display = 'flex';
-          setTimeout(() => {
-            successEl.setAttribute('aria-hidden', 'true');
-            successEl.style.display = 'none';
-          }, 5000);
-        }
-      }, 1200);
+      }
     });
   }
 

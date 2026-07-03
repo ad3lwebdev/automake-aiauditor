@@ -90,7 +90,7 @@ All code runs inside a single `DOMContentLoaded` listener. No global state excep
 | Skill bars           | `IntersectionObserver` on `.skill-fill[data-width]`, sets `style.width` (invoked by `initSkillBars()` after render) |
 | Scroll reveal        | `IntersectionObserver` adds `.visible` to `.reveal` elements |
 | Active nav           | Scroll listener reads `section.offsetTop`, sets `.active` on `.nav-link` |
-| Contact form         | `#contact-form` — client-side validation, simulated async submit |
+| Contact form         | `#contact-form` — client-side validation, then real submission via `fetch()` to Web3Forms (`api.web3forms.com/submit`); honeypot field drops bots |
 | Footer year          | Sets `#footer-year` to `new Date().getFullYear()` |
 
 ## Non-Obvious Decisions

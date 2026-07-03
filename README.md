@@ -18,6 +18,26 @@ A premium, production-ready personal portfolio website for Adel Auditor, an AI A
 - **Fully responsive** — mobile-first, breakpoints at 768px and 1024px
 - **SEO optimised** — Open Graph, Twitter Card, canonical, meta descriptions
 
+## Contact Form (Web3Forms)
+
+The contact form sends real emails via [Web3Forms](https://web3forms.com) —
+a free, backend-free form relay (no signup account needed, just an access
+key delivered to your email).
+
+**One-time setup:**
+1. Go to https://web3forms.com and enter the email where you want to
+   receive messages (e.g. `adelauditor05@gmail.com`)
+2. Copy the **Access Key** you receive
+3. Open `index.html`, find this line near the top of the contact form:
+   ```html
+   <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY-HERE" />
+   ```
+4. Replace `YOUR-WEB3FORMS-ACCESS-KEY-HERE` with your real access key
+5. Save, commit, push — done. Every form submission now emails you directly.
+
+No monthly cap on the free plan for this volume of traffic. A built-in
+honeypot field (`botcheck`) silently drops obvious bot submissions.
+
 ## Updating Your Skills & Projects
 
 You no longer need to edit HTML to add a project or skill. Just edit

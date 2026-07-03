@@ -621,6 +621,12 @@
           </div>
 
           <form class="contact-form glass-card" id="contact-form" novalidate aria-label="Contact form">
+            <!-- Web3Forms: get your free access key at https://web3forms.com and paste it below -->
+            <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY-HERE" />
+            <input type="hidden" name="subject" value="New message from adelauditor.dev contact form" />
+            <input type="hidden" name="from_name" value="Adel Auditor Portfolio" />
+            <!-- Honeypot: bots tend to fill this; humans never see it (hidden via CSS) -->
+            <input type="checkbox" name="botcheck" class="hidden-field" style="display:none" tabindex="-1" autocomplete="off" />
             <div class="form-group">
               <label for="contact-name" class="form-label">Your Name</label>
               <div class="form-input-wrap">
@@ -709,6 +715,11 @@
             <div class="form-success" id="form-success" role="status" aria-live="polite" aria-hidden="true">
               <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
               <span>Message sent! I'll get back to you within 24 hours.</span>
+            </div>
+
+            <div class="form-submit-error" id="form-submit-error" role="alert" aria-live="polite" aria-hidden="true">
+              <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+              <span>Something went wrong sending your message. Please try again or email me directly.</span>
             </div>
           </form>
         </div>
