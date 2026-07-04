@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // workflow is active. This call is fire-and-forget: if it fails, the
   // visitor still sees a normal success message from the Web3Forms step.
 
-  const N8N_AUTOREPLY_WEBHOOK_URL = 'https://n8n-adel-srwz.onrender.com/webhook-test/portfolio-autoreply';
+  const N8N_AUTOREPLY_WEBHOOK_URL = 'https://n8n-adel-srwz.onrender.com/webhook/portfolio-autoreply';
 
   const contactForm = document.getElementById('contact-form');
 
