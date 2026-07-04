@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!valid) return;
 
       const accessKey = contactForm.querySelector('[name="access_key"]')?.value;
-   if (!accessKey || accessKey === 'YOUR-WEB3FORMS-ACCESS-KEY-HERE') {
+      if (!accessKey || accessKey === 'YOUR-WEB3FORMS-ACCESS-KEY-HERE') {
         console.error('Web3Forms access_key is not set — see index.html contact form.');
         showBanner(errorEl);
         return;
@@ -504,6 +504,171 @@ document.addEventListener('DOMContentLoaded', () => {
       node.classList.add('reveal');
       flowObserver.observe(node);
     });
+  }
+
+
+  // ─── 13. FAQ CHAT WIDGET (client-side, no backend, no API cost) ──────────
+  //
+  // Loads Q&A pairs from faq.json and matches user input by keyword overlap.
+  // To edit what the bot says, just edit faq.json — no code changes needed.
+
+  const faqWidget   = document.getElementById('faq-widget');
+  const faqToggle   = document.getElementById('faq-toggle');
+  const faqPanel    = document.getElementById('faq-panel');
+  const faqClose    = document.getElementById('faq-close');
+  const faqMessages = document.getElementById('faq-messages');
+  const faqChips    = document.getElementById('faq-quick-questions');
+  const faqForm     = document.getElementById('faq-input-form');
+  const faqInput    = document.getElementById('faq-input');
+
+  if (faqWidget && faqToggle && faqPanel) {
+    let faqData = null;
+    let hasGreeted = false;
+
+    const scrollMessagesToBottom = () => {
+      faqMessages.scrollTop = faqMessages.scrollHeight;
+    };
+
+    const appendMessage = (text, sender) => {
+      const bubble = document.createElement('div');
+      bubble.className = `faq-message faq-message--${sender}`;
+      bubble.textContent = text;
+      faqMessages.appendChild(bubble);
+      scrollMessagesToBottom();
+    };
+
+    const showTypingIndicator = () => {
+      const typing = document.createElement('div');
+      typing.className = 'faq-message faq-message--bot faq-message--typing';
+      typing.id = 'faq-typing-indicator';
+      typing.innerHTML = '<span class="faq-typing-dot"></span><span class="faq-typing-dot"></span><span class="faq-typing-dot"></span>';
+      faqMessages.appendChild(typing);
+      scrollMessagesToBottom();
+    };
+
+    const removeTypingIndicator = () => {
+      document.getElementById('faq-typing-indicator')?.remove();
+    };
+
+    const respondTo = (userText) => {
+      if (!faqData) return;
+      showTypingIndicator();
+
+      // Simulated "thinking" delay makes the scripted bot feel less abrupt.
+      setTimeout(() => {
+        removeTypingIndicator();
+
+        const normalized = userText.toLowerCase();
+        let bestMatch = null;
+        let bestScore = 0;
+
+        faqData.faqs.forEach((faq) => {
+          const score = faq.keywords.reduce(
+            (acc, kw) => acc + (normalized.includes(kw.toLowerCase()) ? 1 : 0),
+            0
+          );
+          if (score > bestScore) {
+            bestScore = score;
+            bestMatch = faq;
+          }
+        });
+
+        appendMessage(bestMatch ? bestMatch.answer : faqData.fallback, 'bot');
+      }, 500 + Math.random() * 400);
+    };
+
+    const renderQuickQuestions = () => {
+      faqChips.innerHTML = '';
+      faqData.quickQuestions.forEach((question) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'faq-chip';
+        chip.textContent = question;
+        chip.addEventListener('click', () => {
+          appendMessage(question, 'user');
+          respondTo(question);
+        });
+        faqChips.appendChild(chip);
+      });
+    };
+
+    const loadFaqData = async () => {
+      try {
+        const res = await fetch('faq.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`Failed to load faq.json (${res.status})`);
+        faqData = await res.json();
+
+        const nameEl = document.getElementById('faq-bot-name');
+        const subEl  = document.getElementById('faq-bot-subtitle');
+        if (nameEl) nameEl.textContent = faqData.botName;
+        if (subEl)  subEl.textContent  = faqData.botSubtitle;
+
+        renderQuickQuestions();
+      } catch (err) {
+        console.error('FAQ bot failed to load:', err);
+        faqData = {
+          botName: 'Assistant',
+          botSubtitle: 'Unavailable',
+          greeting: '',
+          fallback: "Sorry, I'm having trouble loading right now. Please use the contact form below.",
+          quickQuestions: [],
+          faqs: [],
+        };
+      }
+    };
+
+    const openPanel = () => {
+      faqPanel.setAttribute('data-open', 'true');
+      faqPanel.setAttribute('aria-hidden', 'false');
+      faqToggle.setAttribute('aria-expanded', 'true');
+      faqToggle.setAttribute('aria-label', 'Close chat assistant');
+
+      if (!hasGreeted && faqData?.greeting) {
+        hasGreeted = true;
+        showTypingIndicator();
+        setTimeout(() => {
+          removeTypingIndicator();
+          appendMessage(faqData.greeting, 'bot');
+        }, 450);
+      }
+
+      setTimeout(() => faqInput?.focus(), 250);
+    };
+
+    const closePanel = () => {
+      faqPanel.setAttribute('data-open', 'false');
+      faqPanel.setAttribute('aria-hidden', 'true');
+      faqToggle.setAttribute('aria-expanded', 'false');
+      faqToggle.setAttribute('aria-label', 'Open chat assistant');
+    };
+
+    faqToggle.addEventListener('click', () => {
+      const isOpen = faqPanel.getAttribute('data-open') === 'true';
+      isOpen ? closePanel() : openPanel();
+    });
+
+    faqClose?.addEventListener('click', closePanel);
+
+    document.addEventListener('click', (e) => {
+      if (
+        faqPanel.getAttribute('data-open') === 'true' &&
+        !faqPanel.contains(e.target) &&
+        !faqToggle.contains(e.target)
+      ) {
+        closePanel();
+      }
+    });
+
+    faqForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = faqInput.value.trim();
+      if (!text) return;
+      appendMessage(text, 'user');
+      faqInput.value = '';
+      respondTo(text);
+    });
+
+    loadFaqData();
   }
 
 });

@@ -18,6 +18,23 @@ A premium, production-ready personal portfolio website for Adel Auditor, an AI A
 - **Fully responsive** — mobile-first, breakpoints at 768px and 1024px
 - **SEO optimised** — Open Graph, Twitter Card, canonical, meta descriptions
 
+## FAQ Chat Widget (no backend, no API cost)
+
+A floating chat assistant ("AVA") sits in the bottom-right corner of every
+page. It's fully client-side — no AI API, no server, no ongoing cost — and
+answers by matching keywords in the visitor's question against the entries
+in **`faq.json`**.
+
+**To edit what it says:**
+1. Open `faq.json`
+2. Edit `greeting`, `fallback`, `quickQuestions` (the suggestion chips), or
+   any entry in `faqs` — each has a list of `keywords` to match against and
+   an `answer` to show when matched
+3. Save, commit, push — live immediately, no code changes needed
+
+If nothing matches, it falls back to the `fallback` message pointing the
+visitor to the real contact form.
+
 ## Contact Form (Web3Forms)
 
 The contact form sends real emails via [Web3Forms](https://web3forms.com) —

@@ -1,0 +1,64 @@
+{
+  "botName": "AVA",
+  "botSubtitle": "Automation Virtual Assistant",
+  "greeting": "Hi there! I'm AVA \ud83d\udc4b I can answer quick questions about Adel's services, pricing, process, and more. What would you like to know?",
+  "fallback": "Hmm, I don't have a canned answer for that one yet. Try one of the topics below, or use the contact form so Adel can answer you personally!",
+  "quickQuestions": [
+    "What services do you offer?",
+    "How much does it cost?",
+    "How long does a project take?",
+    "How do I get started?",
+    "What tools do you work with?",
+    "Are you available right now?"
+  ],
+  "faqs": [
+    {
+      "keywords": ["service", "offer", "what do you do", "help with", "specialize"],
+      "answer": "Adel offers 5 core services: n8n Automation, Zapier Automation, AI Agents, API Integrations, and Business Process Automation. Scroll up to the Services section for the full breakdown of each one!"
+    },
+    {
+      "keywords": ["price", "cost", "rate", "budget", "how much", "charge", "quote"],
+      "answer": "Pricing depends on the complexity and scope of your automation \u2014 a simple Zap is very different from a multi-agent AI system. The best move is to send a quick message with what you need automated, and Adel will get back to you with a clear quote. No generic pricing table here, sorry! \ud83d\ude4f"
+    },
+    {
+      "keywords": ["how long", "timeline", "turnaround", "duration", "when done", "delivery time"],
+      "answer": "Most single-workflow automations (like a Zapier or n8n setup) take about 3\u20137 business days. Larger projects with AI agents or multiple integrations usually run 2\u20134 weeks. Adel will give you a specific timeline once he understands your project scope."
+    },
+    {
+      "keywords": ["get started", "how do i start", "next step", "begin", "hire", "work with you", "work together"],
+      "answer": "Easy \u2014 just scroll down to the Contact section and send a message describing what you'd like to automate, your current tools, and your goals. Adel typically replies within 24 hours."
+    },
+    {
+      "keywords": ["tool", "tech stack", "technology", "software", "platform", "what do you use"],
+      "answer": "Adel's main toolkit: n8n, Zapier, OpenAI/GPT-4, Claude, Python, and REST/GraphQL/Webhook APIs \u2014 plus whatever CRM, helpdesk, or messaging platforms your business already runs on."
+    },
+    {
+      "keywords": ["available", "availability", "free right now", "open for work", "taking clients", "book"],
+      "answer": "Check the little status badge in the hero section at the top of the page \u2014 it always reflects Adel's current availability for new projects. If it says \"Available for Projects,\" you're good to reach out!"
+    },
+    {
+      "keywords": ["project", "portfolio", "example", "past work", "case study", "worked on"],
+      "answer": "Take a look at the Projects section above \u2014 it includes real examples like an AI Facebook Page Agent, a full Dental Clinic automation suite, a lead-gen pipeline, and a Customer Support AI agent."
+    },
+    {
+      "keywords": ["skill", "experience", "expert", "how good", "qualif"],
+      "answer": "You can see Adel's skill breakdown (n8n, Zapier, AI/LLM integration, API development, Python, and process automation) with proficiency levels in the Skills section above."
+    },
+    {
+      "keywords": ["contact", "email", "reach", "message", "get in touch", "talk"],
+      "answer": "You can email adelauditor05@gmail.com directly, message via Facebook, or just use the contact form right below on this page \u2014 whichever is easiest for you!"
+    },
+    {
+      "keywords": ["remote", "location", "where are you", "based", "time zone", "country"],
+      "answer": "Adel works remotely and collaborates with clients across different time zones \u2014 async communication and clear documentation make that easy. Mention your time zone in your message if scheduling a call matters to you."
+    },
+    {
+      "keywords": ["workflow", "process", "how does it work", "how it works", "steps"],
+      "answer": "Check the Workflow section above \u2014 it walks through the 5-step process most automations follow: Trigger, Processing, AI Decision, Action, and Notification, complete with error handling and monitoring built in."
+    },
+    {
+      "keywords": ["maintain", "support after", "ongoing", "break", "fix", "bug"],
+      "answer": "Yes \u2014 Adel can set up ongoing monitoring and support after launch so your automations keep running smoothly. Just mention you'd like ongoing support when you reach out."
+    }
+  ]
+}

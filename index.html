@@ -622,7 +622,7 @@
 
           <form class="contact-form glass-card" id="contact-form" novalidate aria-label="Contact form">
             <!-- Web3Forms: get your free access key at https://web3forms.com and paste it below -->
-            <input type="hidden" name="access_key" value="38f72ee5-c624-41f0-b562-d85f5c702ca0" />
+            <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY-HERE" />
             <input type="hidden" name="subject" value="New message from adelauditor.dev contact form" />
             <input type="hidden" name="from_name" value="Adel Auditor Portfolio" />
             <!-- Honeypot: bots tend to fill this; humans never see it (hidden via CSS) -->
@@ -781,6 +781,48 @@
       </div>
     </div>
   </footer>
+
+  <!-- ========== FAQ CHAT WIDGET ========== -->
+  <div class="faq-widget" id="faq-widget">
+    <button class="faq-toggle" id="faq-toggle" aria-label="Open chat assistant" aria-expanded="false" aria-controls="faq-panel">
+      <i class="fa-solid fa-comment-dots faq-toggle-icon faq-toggle-icon--open" aria-hidden="true"></i>
+      <i class="fa-solid fa-xmark faq-toggle-icon faq-toggle-icon--close" aria-hidden="true"></i>
+      <span class="faq-toggle-ping" aria-hidden="true"></span>
+    </button>
+
+    <div class="faq-panel glass-card" id="faq-panel" role="dialog" aria-label="FAQ assistant chat" aria-hidden="true">
+      <div class="faq-panel-header">
+        <div class="faq-bot-avatar" aria-hidden="true"><i class="fa-solid fa-robot"></i></div>
+        <div class="faq-panel-title">
+          <span class="faq-bot-name" id="faq-bot-name">AVA</span>
+          <span class="faq-bot-subtitle" id="faq-bot-subtitle">Automation Virtual Assistant</span>
+        </div>
+        <button class="faq-close" id="faq-close" aria-label="Close chat assistant">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="faq-messages" id="faq-messages" role="log" aria-live="polite"></div>
+
+      <div class="faq-quick-questions" id="faq-quick-questions" aria-label="Suggested questions"></div>
+
+      <form class="faq-input-row" id="faq-input-form" aria-label="Ask a question">
+        <input
+          type="text"
+          id="faq-input"
+          class="faq-input"
+          placeholder="Type a question..."
+          autocomplete="off"
+          aria-label="Type your question"
+        />
+        <button type="submit" class="faq-send" aria-label="Send question">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+        </button>
+      </form>
+
+      <p class="faq-disclaimer">Scripted assistant, not live AI — for anything specific, use the contact form below.</p>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="script.js"></script>
